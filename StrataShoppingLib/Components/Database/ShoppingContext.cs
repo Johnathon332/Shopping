@@ -6,7 +6,7 @@ namespace StrataShoppingLib.Components.Database
 	/// <summary>
 	/// Class for accessing the database
 	/// </summary>
-	public class ShoppingContext : DbContext, IDbContext
+	public class ShoppingContext : DbContext
 	{
 		#region Constructor
 
@@ -52,28 +52,37 @@ namespace StrataShoppingLib.Components.Database
 		/// <summary>
 		/// Represents a collection of all the customers
 		/// </summary>
-		public DbSet<Customer> Customers { get; set; }
+		public virtual IDbSet<Customer> Customers { get; set; }
 
 		/// <summary>
 		/// Represents a collection of all the shopping cart items
 		/// </summary>
-		public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+		public virtual IDbSet<ShoppingCart> ShoppingCarts { get; set; }
 
 		/// <summary>
 		/// Represents a collection of all products
 		/// </summary>
-		public DbSet<Product> Products { get; set; }
+		public virtual IDbSet<Product> Products { get; set; }
 
 		/// <summary>
 		/// Represents a collection of all orders
 		/// </summary>
-		public DbSet<Order> Orders { get; set; }
+		public virtual IDbSet<Order> Orders { get; set; }
 
 		/// <summary>
 		/// Represents a collection of all items in the order line
 		/// </summary>
-		public DbSet<OrderLine> OrderLines { get; set; }
+		public virtual IDbSet<OrderLine> OrderLines { get; set; }
 
 		#endregion DbSets
+
+		#region helpers
+
+		public virtual void ModifyEntity(object entity)
+		{
+			Entry(entity).State = EntityState.Modified;
+		}
+
+		#endregion helpers
 	}
 }
