@@ -6,6 +6,7 @@
 	/// </summary>
 	public enum MemberType
 	{
+		None,
 		Silver,
 		Gold
 	}

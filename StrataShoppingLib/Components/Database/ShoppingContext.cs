@@ -8,12 +8,18 @@ namespace StrataShoppingLib.Components.Database
 	/// </summary>
 	public class ShoppingContext : DbContext
 	{
+		#region Constructor
+
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		public ShoppingContext() : base("StrataShopping")
 		{
 		}
+
+		#endregion Constructor
+
+		#region Context methods
 
 		//
 		// Summary:
@@ -39,6 +45,10 @@ namespace StrataShoppingLib.Components.Database
 			base.OnModelCreating(modelBuilder);
 		}
 
+		#endregion Context methods
+
+		#region DbSets
+
 		/// <summary>
 		/// Represents a collection of all the customers
 		/// </summary>
@@ -63,5 +73,7 @@ namespace StrataShoppingLib.Components.Database
 		/// Represents a collection of all items in the order line
 		/// </summary>
 		public DbSet<OrderLine> OrderLines { get; set; }
+
+		#endregion DbSets
 	}
 }
