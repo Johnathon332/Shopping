@@ -68,7 +68,9 @@
     <Compile Include="Components\Database\DomainModels\OrderLine.cs" />
     <Compile Include="Components\Database\DomainModels\Product.cs" />
     <Compile Include="Components\Database\DomainModels\ShoppingCart.cs" />
+    <Compile Include="Components\Database\IDbContext.cs" />
     <Compile Include="Components\Database\ShoppingContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

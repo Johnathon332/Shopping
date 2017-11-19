@@ -6,7 +6,7 @@ namespace StrataShoppingLib.Components.Database
 	/// <summary>
 	/// Class for accessing the database
 	/// </summary>
-	public class ShoppingContext : DbContext
+	public class ShoppingContext : DbContext, IDbContext
 	{
 		#region Constructor
 
