@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrataShoppingLib.UnitTest", "StrataShoppingLib.UnitTest\StrataShoppingLib.UnitTest.csproj", "{9E60D9F7-9C7D-4293-AD9C-732F96785BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrataShoppingLib", "StrataShoppingLib\StrataShoppingLib.csproj", "{8EEC7F4D-0266-479A-ACD8-C3EC81CEDCDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E60D9F7-9C7D-4293-AD9C-732F96785BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E60D9F7-9C7D-4293-AD9C-732F96785BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E60D9F7-9C7D-4293-AD9C-732F96785BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E60D9F7-9C7D-4293-AD9C-732F96785BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEC7F4D-0266-479A-ACD8-C3EC81CEDCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEC7F4D-0266-479A-ACD8-C3EC81CEDCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEC7F4D-0266-479A-ACD8-C3EC81CEDCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEC7F4D-0266-479A-ACD8-C3EC81CEDCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F249D69-CA22-4AA9-9AEA-4B4A0BAC43B5}
+	EndGlobalSection
+EndGlobal
