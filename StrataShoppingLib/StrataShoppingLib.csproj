@@ -73,9 +73,11 @@
     <Compile Include="Components\Database\DomainModels\ShoppingCart.cs" />
     <Compile Include="Components\Database\Repositories\CustomerRepository.cs" />
     <Compile Include="Components\Database\Repositories\ICustomerRepository.cs" />
+    <Compile Include="Components\Database\Repositories\IOrderRepository.cs" />
     <Compile Include="Components\Database\Repositories\IProductRepository.cs" />
     <Compile Include="Components\Database\Repositories\IRepository.cs" />
     <Compile Include="Components\Database\Repositories\IShoppingCartRepository.cs" />
+    <Compile Include="Components\Database\Repositories\OrderRepository.cs" />
     <Compile Include="Components\Database\Repositories\ProductRepository.cs" />
     <Compile Include="Components\Database\Repositories\ShoppingCartRepository.cs" />
     <Compile Include="Components\Database\ShoppingContext.cs" />

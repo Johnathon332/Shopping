@@ -16,6 +16,7 @@ namespace StrataShoppingLib.Components
 			Bind<ICustomerRepository>().To<CustomerRepository>().InRequestScope();
 			Bind<IShoppingCartRepository>().To<ShoppingCartRepository>().InRequestScope();
 			Bind<IProductRepository>().To<ProductRepository>().InRequestScope();
+			Bind<IOrderRepository>().To<OrderRepository>().InRequestScope();
 		}
 	}
 }
