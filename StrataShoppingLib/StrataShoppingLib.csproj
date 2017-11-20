@@ -75,6 +75,7 @@
     <Compile Include="Components\Database\Repositories\ICustomerRepository.cs" />
     <Compile Include="Components\Database\Repositories\IRepository.cs" />
     <Compile Include="Components\Database\Repositories\IShoppingCartRepository.cs" />
+    <Compile Include="Components\Database\Repositories\ShoppingCartRepository.cs" />
     <Compile Include="Components\Database\ShoppingContext.cs" />
     <Compile Include="Migrations\201711190216226_initial.cs" />
     <Compile Include="Migrations\201711190216226_initial.Designer.cs">

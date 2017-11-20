@@ -52,8 +52,12 @@ namespace StrataShoppingLib.Components.Database.Repositories
 		/// <returns>Customer matching the identifier</returns>
 		public Customer GetByUniqueIdentifier(string identifier)
 		{
-			Customer customer = mContext.Customers.Where(c => c.Name == identifier).FirstOrDefault();
+			if (String.IsNullOrEmpty(identifier))
+			{
+				throw new ArgumentNullException("identifier", "No identifier has been specified");
+			}
 
+			Customer customer = mContext.Customers.Where(c => c.Name == identifier).FirstOrDefault();
 			return customer;
 		}
 

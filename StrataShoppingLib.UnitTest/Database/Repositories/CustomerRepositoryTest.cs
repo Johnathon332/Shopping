@@ -48,7 +48,10 @@ namespace StrataShoppingLib.UnitTest.Database.Repositories
 		[Test]
 		public void Constructor_PassNullContext_ShouldThrowArgumentNullException()
 		{
+			// Arrange
 			string expectedExceptionMessage = "No context was passed in";
+
+			// Assert
 			Assert.That(() => new CustomerRepository(null),
 				Throws.TypeOf<ArgumentNullException>().With.Message.Contains(expectedExceptionMessage));
 		}
@@ -75,7 +78,7 @@ namespace StrataShoppingLib.UnitTest.Database.Repositories
 			IEnumerable<Customer> result = mRepository.Get();
 
 			// Assert
-			Assert.That(result.Count(), Is.EqualTo(0));
+			Assert.That(result.Count, Is.EqualTo(0));
 		}
 
 		/// <summary>
@@ -123,10 +126,26 @@ namespace StrataShoppingLib.UnitTest.Database.Repositories
 			mMockContext.Setup(c => c.Customers).Returns(mockSet.Object);
 
 			// Act
-			Customer result = mRepository.GetByUniqueIdentifier("");
+			Customer result = mRepository.GetByUniqueIdentifier("hello");
 
 			// Assert
 			Assert.That(result, Is.Null);
+		}
+
+		/// <summary>
+		/// When passing null or empty string it should throw an ArgumentNullException
+		/// </summary>
+		/// <param name="idenfifier"></param>
+		[TestCase("")]
+		[TestCase(null)]
+		public void GetUniqueIdentifier_PassInvalidIdentifier_ShouldThrowArgumentNullException(string identifier)
+		{
+			// Arrange
+			string expectedMessage = "No identifier has been specified";
+
+			// Assert
+			Assert.That(() => mRepository.GetByUniqueIdentifier(identifier),
+				Throws.TypeOf<ArgumentNullException>().With.Message.Contains(expectedMessage));
 		}
 
 		/// <summary>
