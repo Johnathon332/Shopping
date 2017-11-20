@@ -34,6 +34,10 @@ namespace StrataShoppingLib.Components.Database.Repositories
 
 		#endregion Constructor
 
+		/// <summary>
+		/// Returns all rows from the datastore
+		/// </summary>
+		/// <returns>All rows of T from the database as an IEnumerable</returns>
 		public IEnumerable<ShoppingCart> Get()
 		{
 			return mContext.ShoppingCarts;
@@ -49,6 +53,10 @@ namespace StrataShoppingLib.Components.Database.Repositories
 			return mContext.ShoppingCarts.Where(s => s.CustomerName == customerName);
 		}
 
+		/// <summary>
+		/// Remove the entity from the datastore
+		/// </summary>
+		/// <param name="entity">THe entity to be removed</param>
 		public void Remove(ShoppingCart entity)
 		{
 			if (entity == null)
@@ -60,6 +68,10 @@ namespace StrataShoppingLib.Components.Database.Repositories
 			mContext.SaveChanges();
 		}
 
+		/// <summary>
+		/// Inserts the entity into the datastore
+		/// </summary>
+		/// <param name="entity">The entity to be inserted</param>
 		public void Save(ShoppingCart entity)
 		{
 			if (entity == null)
@@ -71,6 +83,10 @@ namespace StrataShoppingLib.Components.Database.Repositories
 			mContext.SaveChanges();
 		}
 
+		/// <summary>
+		/// Update the entity, the entity will be searched by via the keys and will be updated
+		/// </summary>
+		/// <param name="entity">The entity to be updated by</param>
 		public void Update(ShoppingCart entity)
 		{
 			if (entity == null)

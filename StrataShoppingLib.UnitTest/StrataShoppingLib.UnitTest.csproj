@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Repositories\CustomerRepositoryTest.cs" />
+    <Compile Include="Database\Repositories\ProductRepositoryTest.cs" />
     <Compile Include="Database\Repositories\ShoppingCartRepositoryTest.cs" />
     <Compile Include="Database\TestHelpers\DbSetMocking.cs" />
     <Compile Include="Database\TestHelpers\RepositoryFactory.cs" />

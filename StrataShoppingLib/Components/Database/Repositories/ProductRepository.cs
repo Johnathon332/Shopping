@@ -1,14 +1,11 @@
-﻿using StrataShoppingLib.Components.Database.DomainModels;
+﻿using System.Collections.Generic;
+using StrataShoppingLib.Components.Database.DomainModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace StrataShoppingLib.Components.Database.Repositories
 {
-	/// <summary>
-	/// Implementation of the ICustomerRepository
-	/// </summary>
-	public class CustomerRepository : ICustomerRepository
+	public class ProductRepository : IProductRepository
 	{
 		#region Member variables
 
@@ -22,7 +19,7 @@ namespace StrataShoppingLib.Components.Database.Repositories
 		/// Constructor
 		/// </summary>
 		/// <param name="context">Context to access the datastore</param>
-		public CustomerRepository(ShoppingContext context)
+		public ProductRepository(ShoppingContext context)
 		{
 			if (context == null)
 			{
@@ -34,44 +31,42 @@ namespace StrataShoppingLib.Components.Database.Repositories
 
 		#endregion Constructor
 
-		#region Repository methods
-
 		/// <summary>
 		/// Returns all rows from the datastore
 		/// </summary>
 		/// <returns>All rows of T from the database as an IEnumerable</returns>
-		public IEnumerable<Customer> Get()
+		public IEnumerable<Product> Get()
 		{
-			return mContext.Customers;
+			return mContext.Products;
 		}
 
 		/// <summary>
-		/// Returns one item from the datastore depending searching by an indentifier
+		/// Gets a product from the datastore given a product code
 		/// </summary>
-		/// <param name="identifier">Field that we are searching by</param>
-		/// <returns>Customer matching the identifier</returns>
-		public Customer GetByUniqueIdentifier(string identifier)
+		/// <param name="productCode">The product code of the product</param>
+		/// <returns>A product</returns>
+		public Product GetByProductCode(string productCode)
 		{
-			if (String.IsNullOrEmpty(identifier))
+			if (String.IsNullOrEmpty(productCode))
 			{
-				throw new ArgumentNullException("identifier", "No identifier has been specified");
+				throw new ArgumentNullException("productCode", "No identifier has been specified");
 			}
 
-			return mContext.Customers.FirstOrDefault(c => c.Name == identifier);
+			return mContext.Products.FirstOrDefault(p => p.Code == productCode);
 		}
 
 		/// <summary>
 		/// Remove the entity from the datastore
 		/// </summary>
 		/// <param name="entity">THe entity to be removed</param>
-		public void Remove(Customer entity)
+		public void Remove(Product entity)
 		{
 			if (entity == null)
 			{
 				throw new ArgumentNullException("entity", "No entity has been passed in");
 			}
 
-			mContext.Customers.Remove(entity);
+			mContext.Products.Remove(entity);
 			mContext.SaveChanges();
 		}
 
@@ -79,14 +74,14 @@ namespace StrataShoppingLib.Components.Database.Repositories
 		/// Inserts the entity into the datastore
 		/// </summary>
 		/// <param name="entity">The entity to be inserted</param>
-		public void Save(Customer entity)
+		public void Save(Product entity)
 		{
 			if (entity == null)
 			{
 				throw new ArgumentNullException("entity", "No entity has been passed in");
 			}
 
-			mContext.Customers.Add(entity);
+			mContext.Products.Add(entity);
 			mContext.SaveChanges();
 		}
 
@@ -94,7 +89,7 @@ namespace StrataShoppingLib.Components.Database.Repositories
 		/// Update the entity, the entity will be searched by via the keys and will be updated
 		/// </summary>
 		/// <param name="entity">The entity to be updated by</param>
-		public void Update(Customer entity)
+		public void Update(Product entity)
 		{
 			if (entity == null)
 			{
@@ -104,7 +99,5 @@ namespace StrataShoppingLib.Components.Database.Repositories
 			mContext.ModifyEntity(entity);
 			mContext.SaveChanges();
 		}
-
-		#endregion Repository methods
 	}
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace StrataShoppingLib.Components.Database.Repositories
 {
+	/// <summary>
+	/// Interface for shopping cart repository
+	/// </summary>
 	public interface IShoppingCartRepository : IRepository<ShoppingCart>
 	{
 		/// <summary>

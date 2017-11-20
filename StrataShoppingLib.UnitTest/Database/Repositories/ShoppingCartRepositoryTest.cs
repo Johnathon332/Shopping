@@ -112,7 +112,7 @@ namespace StrataShoppingLib.UnitTest.Database.Repositories
 		/// <param name="idenfifier"></param>
 		[TestCase("")]
 		[TestCase(null)]
-		public void GetUniqueIdentifier_PassInvalidIdentifier_ShouldThrowArgumentNullException(string customerName)
+		public void GetCustomerShoppingCart_PassInvalidIdentifier_ShouldThrowArgumentNullException(string customerName)
 		{
 			// Arrange
 			string expectedMessage = "No customer name has been specified";
@@ -146,7 +146,7 @@ namespace StrataShoppingLib.UnitTest.Database.Repositories
 		/// Test when GetByUniqueIdentifier was called then we get a ShoppingCart with the name we are expecting
 		/// </summary>
 		[Test]
-		public void GetByUniqueIdentifier_PassValidIdenfitier_ShouldReturnExpectedShoppingCartWithNameStrata()
+		public void GetCustomerShoppingCart_PassValidIdenfitier_ShouldReturnExpectedShoppingCartWithNameStrata()
 
 		{
 			// Arrange
